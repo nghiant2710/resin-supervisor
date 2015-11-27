@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "4.0"
+  - "0.12"
+  - "0.10"
+
+before_script:
+  - npm install -g grunt-cli
+  - sudo apt-get update
+  - sudo apt-get install -y python python-pip python-dev
+  - pip install requests==2.4.3
+  - python ./automation/travis_bot.py
+
+env:
+  global:
+  - TRAVIS_BOT_GITHUB_TOKEN=4b9653e1ff8c81415f2dc94c5b7861c5947b3a21
