@@ -28,12 +28,16 @@ def comment_on_pull_request(pr_number, slug, token, comment):
 
 if __name__ == '__main__':
     PR_NUMBER = os.environ.get('TRAVIS_PULL_REQUEST')
+    print(PR_NUMBER)
     REPO_SLUG = os.environ.get('TRAVIS_REPO_SLUG')
+    print(REPO_SLUG)
     TOKEN = os.environ.get('TRAVIS_BOT_GITHUB_TOKEN')
-    MESSAGE = os.environ.get('TRAVIS_BOT_NO_RESULTS_MSG', None)
+    print(TOKEN)
+    #MESSAGE = os.environ.get('TRAVIS_BOT_NO_RESULTS_MSG', None)
 
     comment = (
         """
+All following items must be checked before merging this PR:
 - [ ] Changelog.
 - [ ] Tests added.
 - [ ] Security.
