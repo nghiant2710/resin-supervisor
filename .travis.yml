@@ -1,0 +1,13 @@
+language: python
+python:
+  - "2.7"
+
+before_script:
+  - pip install requests
+  - python ./automation/travis_bot.py
+
+script: echo 'ok'
+
+env:
+  global:
+  - TRAVIS_BOT_GITHUB_TOKEN='d2b4ccb0f6477106f938.56425860f240dce07f39'
