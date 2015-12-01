@@ -27,7 +27,7 @@ module.exports = (application) ->
 		res.send('OK')
 
 	api.post '/v1/blink', (req, res) ->
-		utils.mixpanelTrack('Device blink')
+		utils.	 mixpanelTrack('Device blink')
 		utils.blink.pattern.start()
 		setTimeout(utils.blink.pattern.stop, 15000)
 		res.sendStatus(200)
@@ -135,5 +135,7 @@ module.exports = (application) ->
 			res.status(200).send(secret)
 		.catch (err) ->
 			res.status(503).send(err?.message or err or 'Unknown error')
+
+			
 
 	return api

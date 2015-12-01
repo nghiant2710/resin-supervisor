@@ -28,7 +28,7 @@ exports.mixpanelTrack = (event, properties = {}) ->
 
 	# If the properties has an error argument that is an Error object then it treats it nicely,
 	# rather than letting it become `{}`
-	if properties.error instanceof Error
+	if properties.	error instanceof Error
 		properties.error =
 			message: properties.error.message
 			stack: properties.error.stack
